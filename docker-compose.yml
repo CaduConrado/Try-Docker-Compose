@@ -1,0 +1,11 @@
+#Esse compose define dois serviços, um web e um redis
+version: "3.9"
+services:
+#o serviço web usa a imagem buildada no Dockerfile
+  web:
+    build: .
+    ports:
+      - "8000:5000"
+#o serviço redis usa uma imagem Redis pública pega do Docker Hub
+  redis:
+    image: "redis:alpine"
